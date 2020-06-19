@@ -1,0 +1,67 @@
+<DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charst="utf-8"/>
+        <title>{% block title%}
+            <!-- Titulo de cada página-->
+            {%endblock%}
+        </title>
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}"/>
+    </head>
+
+    <body class="box">
+
+        <!-- Cabecera de la página-->
+        <header>
+            <div id="logotipo">
+                <img src="{%static  'images/logo.png' %}" />
+                <h1>Sitio web con Django</h1>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'inicio' %}">Inicio</a>
+                </li>
+                <li>
+                    <a href="{% url 'hola_mundo' %}">Hola Mundo</a>
+                </li>
+                <li>
+                    <a href="{% url 'pagina' %}">Pagina de pruebas</a>
+                </li> 
+                <li>
+                    <a href="{% url 'contact' 'Javier' 'Mayorgas' %}">Contacto</a>
+                </li> 
+                <li>
+                    <a href="{% url 'articulos' %}">Articulos</a>
+                </li> 
+                <li>
+                    <a href="{% url 'create' %}">Crear</a>
+                </li> 
+                <li>
+                    <a href="{% url 'create_full' %}">Crear articulo </a>
+                </li> 
+            </ul>
+            
+        </nav>
+
+
+        <div id="content">
+            <h2 class="title">Titulo prueba</h2>
+            {% block content %}
+                <strong>Contenido del bloque principal</strong>
+            {% endblock %}
+        </div>
+
+
+        <footer>
+            Máster en Python &copy; Javier Mayorgas - {% now "Y" %}
+        </footer>
+    </body>
+
+
+</html>

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+Pagina de pruebas
+{% endblock %}
+
+{% block content %}
+
+<h1>Pagina de mi web</h1>
+<p>{{" Creado por Javier Mayorgas ñññ"|cut:"ñ" }}</p>
+
+<p>
+    {{texto|default:"No hay nada"}}
+</p>
+<p>
+    {{lista|first}}
+</p>
+<p>
+    {{lista|last}}
+</p>
+<p>
+    {{lista|join:', '}}
+</p>
+<p>
+    {{lista|random}}
+</p>
+<p>
+    {{lista|length}}
+</p>
+<p>
+    {{"TEXTO DE Prueba"|upper|wordcount}}
+</p>
+{% endblock %}
